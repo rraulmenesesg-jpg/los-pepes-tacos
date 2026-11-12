@@ -1,0 +1,118 @@
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-image: url("../img/fondo_menu.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-color: #122824;
+    color: #f3f4f6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: #FBBF24;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.navbar {
+    background: rgba(18, 40, 36, 0.95);
+    border-bottom: 4px solid #D93838;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+}
+
+.navbar-brand {
+    color: #FEF3C7 !important;
+}
+
+section {
+    padding: 30px 15px;
+}
+
+/* Forzar tarjetas lado a lado independientemente de la pantalla */
+#contacto-pagos .row {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+/* Tarjetas de contacto */
+.card-pepes {
+    background: rgba(18, 40, 36, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 3px solid #FBBF24;
+    border-radius: 15px;
+    color: #FEF3C7;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.75);
+}
+
+/* Caja opaca para el menú (efecto carta física) */
+.menu-overlay-box {
+    background: rgba(12, 26, 23, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 3px solid #FBBF24;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.menu-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dashed rgba(251, 191, 36, 0.2);
+    color: #FEF3C7;
+    font-size: 0.95rem;
+}
+
+.dato-box {
+    background-color: rgba(10, 22, 20, 0.85);
+    border: 2px dashed rgba(251, 191, 36, 0.6);
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+
+.btn-boton {
+    background: linear-gradient(90deg, #D93838, #F97316);
+    color: #ffffff;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease;
+}
+
+.btn-boton:hover {
+    opacity: 0.95;
+    color: #ffffff;
+}
+
+.btn-whatsapp {
+    background: linear-gradient(90deg, #15803D, #16A34A);
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #122824;
+    margin: 0 auto;
+    border: 2px solid #FBBF24;
+}
+
+.ico-imagen {
+    width: 25px !important;
+    height: 25px !important;
+    object-fit: contain;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="tacos 'los pepes', menu digital, numero celular y transferencia. | RaulMenesesDev" />
+    <title>Tacos | los pepes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="asesets/css/styles.css">
+    <link rel="icon" type="image/png" href="asesets/img/logo.ico">
+</head>
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#inicio">
+                    <img src="asesets/img/logo.ico" alt="logo" class="ico-imagen">
+                    Los Pepes
+                </a>
+            </div>
+        </nav>
+
+        <!-- Tarjetas de Pago y WhatsApp (Lado a lado en cualquier pantalla) -->
+        <section id="contacto-pagos" class="container mt-5 pt-5">
+            <div class="row g-3 justify-content-center flex-nowrap overflow-auto py-2">
+                
+                <!-- Tarjeta 1: Transferencia Bancaria -->
+                <div class="col-6" style="min-width: 280px; max-width: 450px;">
+                    <div class="card card-pepes h-100 text-center p-3 p-md-4">
+                        <div class="icon-circle mb-2">
+                            <i class="bi bi-credit-card-2-front fs-4 text-warning"></i>
+                        </div>
+                        <h3 class="h6 fw-bold mb-1">Transferencia</h3>
+                        <p class="small mb-2 text-light opacity-75">David Zavala</p>
+                        
+                        <div class="dato-box p-2 mb-2 rounded">
+                            <span id="numero-tarjeta" class="fw-bold fs-6">5428780721701449</span>
+                        </div>
+                        
+                        <button type="button" id="btn-copiar" class="btn-boton w-100 mt-auto py-1" onclick="copiarTarjeta()">
+                            <i class="bi bi-clipboard me-1"></i>Copiar número
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: WhatsApp / Celular -->
+                <div class="col-6" style="min-width: 280px; max-width: 450px;">
+                    <div class="card card-pepes h-100 text-center p-3 p-md-4">
+                        <div class="icon-circle mb-2">
+                            <i class="bi bi-whatsapp fs-4" style="color: #25D366;"></i>
+                        </div>
+                        <h3 class="h6 fw-bold mb-1">WhatsApp</h3>
+                        <p class="small mb-2 text-light opacity-75">Pedidos y comprobantes</p>
+                        
+                        <div class="dato-box p-2 mb-2 rounded">
+                            <span class="fw-bold fs-6">779 228 3423</span>
+                        </div>
+                        
+                        <a href="https://wa.me/5217792283423?text=Hola%20Los%20Pepes,%20quiero%20hacer%20un%20pedido" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="btn-boton btn-whatsapp w-100 mt-auto py-1 d-inline-block text-decoration-none">
+                            <i class="bi bi-whatsapp me-1"></i>Ir a WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección de Menú Estilo Rústico Opaco -->
+        <section id="menu" class="container py-4">
+            <div class="menu-overlay-box p-4 rounded-4 shadow-lg">
+                <h2 class="text-center mb-4 text-warning">Menú</h2>
+                
+                <div class="row g-4">
+                    <!-- Tacos -->
+                    <div class="col-md-4">
+                        <h3 class="h5 border-bottom border-warning pb-2 text-warning">Tacos</h3>
+                        <ul class="list-unstyled menu-list">
+                            <li>Suadero <span>$30.-</span></li>
+                            <li>Enchilada <span>$30.-</span></li>
+                            <li>Campechano <span>$30.-</span></li>
+                            <li>Chorizo <span>$30.-</span></li>
+                            <li>Chorizo verde <span>$30.-</span></li>
+                            <li>Pechuga <span>$30.-</span></li>
+                            <li>Bistec <span>$30.-</span></li>
+                            <li>Chuleta fresca <span>$30.-</span></li>
+                            <li class="fst-italic text-warning mt-2">**Con queso $35.-**</li>
+                        </ul>
+                    </div>
+
+                    <!-- Burritos -->
+                    <div class="col-md-4">
+                        <h3 class="h5 border-bottom border-warning pb-2 text-warning">Burritos</h3>
+                        <ul class="list-unstyled menu-list">
+                            <li>Campechano <span>$90.-</span></li>
+                            <li>Chorizo <span>$90.-</span></li>
+                            <li>Bistec <span>$90.-</span></li>
+                            <li>Chuleta fresca <span>$90.-</span></li>
+                            <li>Chorizo verde <span>$90.-</span></li>
+                            <li>Enchilada <span>$90.-</span></li>
+                            <li>Pechuga <span>$90.-</span></li>
+                            <li>Suadero <span>$90.-</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Bebidas -->
+                    <div class="col-md-4">
+                        <h3 class="h5 border-bottom border-warning pb-2 text-warning">Bebidas</h3>
+                        <ul class="list-unstyled menu-list">
+                            <li>Jarrito 600 ml <span>$25.-</span></li>
+                            <li>Refresco 2 Lts <span>$35.-</span></li>
+                            <li>Coca desechable 600ml <span>$25.-</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function copiarTarjeta() {
+            const texto = document.getElementById('numero-tarjeta').innerText;
+            const btn = document.getElementById('btn-copiar');
+            
+            navigator.clipboard.writeText(texto).then(() => {
+                const htmlOriginal = btn.innerHTML;
+                btn.innerHTML = '<i class="bi bi-check2-circle me-1"></i>¡Copiado!';
+                btn.style.background = '#15803D'; 
+                
+                setTimeout(() => {
+                    btn.innerHTML = htmlOriginal;
+                    btn.style.background = ''; 
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
