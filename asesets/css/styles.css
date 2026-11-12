@@ -116,3 +116,11 @@ section {
     height: 25px !important;
     object-fit: contain;
 }
+
+footer {
+    background: rgba(12, 26, 23, 0.95);
+    border-top: 3px solid #FBBF24;
+    color: #FEF3C7;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
