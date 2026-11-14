@@ -70,6 +70,10 @@
                         <a href="https://wa.me/5217792283423?text=Hola%20Los%20Pepes,%20quiero%20hacer%20un%20pedido" 
                            target="_blank" 
                            rel="noopener noreferrer" 
+                             onclick="gtag('event', 'whatsapp_click', {
+       event_category: 'engagement',
+       event_label: 'whatsapp'
+   });"
                            class="btn-boton btn-whatsapp w-100 mt-auto py-1 d-inline-block text-decoration-none">
                             <i class="bi bi-whatsapp me-1"></i>Ir a WhatsApp
                         </a>
@@ -155,6 +159,10 @@ async function copiarTarjeta() {
         await navigator.clipboard.writeText(texto);
 
         btn.innerHTML = '<i class="bi bi-check2-circle me-1"></i>¡Copiado!';
+        gtag('event', 'copy_card', {
+    event_category: 'engagement',
+    event_label: 'bank_transfer'
+});
         btn.style.background = '#15803D';
 
     } catch (error) {
@@ -176,6 +184,10 @@ async function copiarTarjeta() {
         }
 
         btn.innerHTML = '<i class="bi bi-check2-circle me-1"></i>¡Copiado!';
+        gtag('event', 'copy_card', {
+    event_category: 'engagement',
+    event_label: 'bank_transfer'
+});
         btn.style.background = '#15803D';
 
     } finally {
