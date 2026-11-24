@@ -68,13 +68,13 @@
                         </div>
                         
                         <a href="https://wa.me/5217792283423?text=Hola%20Los%20Pepes,%20quiero%20hacer%20un%20pedido" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                             onclick="gtag('event', 'whatsapp_click', {
-       event_category: 'engagement',
-       event_label: 'whatsapp'
-   });"
-                           class="btn-boton btn-whatsapp w-100 mt-auto py-1 d-inline-block text-decoration-none">
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            onclick="gtag('event', 'whatsapp_click', {
+                                event_category: 'engagement',
+                                event_label: 'whatsapp'
+                            });"
+                            class="btn-boton btn-whatsapp w-100 mt-auto py-1 d-inline-block text-decoration-none">
                             <i class="bi bi-whatsapp me-1"></i>Ir a WhatsApp
                         </a>
                     </div>
@@ -84,56 +84,19 @@
         </section>
 
         <!-- Sección de Menú Estilo Rústico Opaco -->
+
         <section id="menu" class="container py-4">
             <div class="menu-overlay-box p-4 rounded-4 shadow-lg">
-                <h2 class="text-center mb-4 text-warning">Menú</h2>
-                
-                <div class="row g-4">
-                    <!-- Tacos -->
-                    <div class="col-md-4">
-                        <h3 class="h5 border-bottom border-warning pb-2 text-warning">Tacos</h3>
-                        <ul class="list-unstyled menu-list">
-                            <li>Suadero <span>$30.-</span></li>
-                            <li>Enchilada <span>$30.-</span></li>
-                            <li>Campechano <span>$30.-</span></li>
-                            <li>Chorizo <span>$30.-</span></li>
-                            <li>Chorizo verde <span>$30.-</span></li>
-                            <li>Chorizo Argentino <span>$30.-</span></li>
-                            <li>Pechuga <span>$30.-</span></li>
-                            <li>Bistec <span>$30.-</span></li>
-                            <li>Chuleta fresca <span>$30.-</span></li>
-                            <li class="fst-italic text-warning mt-2">**Con queso $35.-**</li>
-                        </ul>
-                    </div>
-
-                    <!-- Burritos -->
-                    <div class="col-md-4">
-                        <h3 class="h5 border-bottom border-warning pb-2 text-warning">Burritos</h3>
-                        <ul class="list-unstyled menu-list">
-                            <li>Campechano <span>$90.-</span></li>
-                            <li>Chorizo <span>$90.-</span></li>
-                            <li>Chorizo verde <span>$90.-</span></li>
-                            <li>Chorizo Argentino<span>$90.-</span></li>
-                            <li>Bistec <span>$90.-</span></li>
-                            <li>Chuleta fresca <span>$90.-</span></li>
-                            <li>Enchilada <span>$90.-</span></li>
-                            <li>Pechuga <span>$90.-</span></li>
-                            <li>Suadero <span>$90.-</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Bebidas -->
-                    <div class="col-md-4">
-                        <h3 class="h5 border-bottom border-warning pb-2 text-warning">Bebidas</h3>
-                        <ul class="list-unstyled menu-list">
-                            <li>Jarrito <span>$20.-</span></li>
-                            <li>Refresco <span>$35.-</span></li>
-                            <li>Coca desechable <span>$25.-</span></li>
-                        </ul>
-                    </div>
+                <h2 id="menu-title"
+                    class="text-center mb-4 text-warning">
+                    Menú
+                </h2>
+                <div id="menu-content" class="row g-4">
+                    <!-- JavaScript renderiza las categorías -->
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="text-center py-4 mt-auto">
@@ -145,59 +108,60 @@
     </footer>
 
     <script>
-       
-async function copiarTarjeta() {
-    const texto = document.getElementById('numero-tarjeta').innerText;
-    const btn = document.getElementById('btn-copiar');
-    const htmlOriginal = btn.innerHTML;
+        async function copiarTarjeta() {
+            const texto = document.getElementById('numero-tarjeta').innerText;
+            const btn = document.getElementById('btn-copiar');
+            const htmlOriginal = btn.innerHTML;
 
-    try {
-        if (!navigator.clipboard?.writeText) {
-            throw new Error('Clipboard API no disponible');
+            try {
+                if (!navigator.clipboard?.writeText) {
+                    throw new Error('Clipboard API no disponible');
+                }
+
+                await navigator.clipboard.writeText(texto);
+
+                btn.innerHTML = '<i class="bi bi-check2-circle me-1"></i>¡Copiado!';
+                gtag('event', 'copy_card', {
+                    event_category: 'engagement',
+                    event_label: 'bank_transfer'
+                });
+                btn.style.background = '#15803D';
+
+            } catch (error) {
+                // Fallback para navegadores con restricciones de Clipboard API.
+                const input = document.createElement('textarea');
+                input.value = texto;
+                input.style.position = 'fixed';
+                input.style.opacity = '0';
+
+                document.body.appendChild(input);
+                input.select();
+
+                const copiado = document.execCommand('copy');
+                input.remove();
+
+                if (!copiado) {
+                    btn.innerHTML = 'No se pudo copiar';
+                    return;
+                }
+
+                btn.innerHTML = '<i class="bi bi-check2-circle me-1"></i>¡Copiado!';
+                gtag('event', 'copy_card', {
+                    event_category: 'engagement',
+                    event_label: 'bank_transfer'
+                });
+                btn.style.background = '#15803D';
+
+            } finally {
+                setTimeout(() => {
+                    btn.innerHTML = htmlOriginal;
+                    btn.style.background = '';
+                }, 2000);
+            }
         }
-
-        await navigator.clipboard.writeText(texto);
-
-        btn.innerHTML = '<i class="bi bi-check2-circle me-1"></i>¡Copiado!';
-        gtag('event', 'copy_card', {
-    event_category: 'engagement',
-    event_label: 'bank_transfer'
-});
-        btn.style.background = '#15803D';
-
-    } catch (error) {
-        // Fallback para navegadores con restricciones de Clipboard API.
-        const input = document.createElement('textarea');
-        input.value = texto;
-        input.style.position = 'fixed';
-        input.style.opacity = '0';
-
-        document.body.appendChild(input);
-        input.select();
-
-        const copiado = document.execCommand('copy');
-        input.remove();
-
-        if (!copiado) {
-            btn.innerHTML = 'No se pudo copiar';
-            return;
-        }
-
-        btn.innerHTML = '<i class="bi bi-check2-circle me-1"></i>¡Copiado!';
-        gtag('event', 'copy_card', {
-    event_category: 'engagement',
-    event_label: 'bank_transfer'
-});
-        btn.style.background = '#15803D';
-
-    } finally {
-        setTimeout(() => {
-            btn.innerHTML = htmlOriginal;
-            btn.style.background = '';
-        }, 2000);
-    }
-}
 
     </script>
+
+<script src="asesets/js/debug_menu.js" defer></script>
 </body>
 </html>

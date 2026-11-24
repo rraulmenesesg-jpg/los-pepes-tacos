@@ -1,0 +1,42 @@
+{
+  "titulo": "Menú",
+  "categorias": [
+    {
+      "nombre": "Tacos",
+      "productos": [
+        { "nombre": "Suadero", "precio": 30 },
+        { "nombre": "Enchilada", "precio": 30 },
+        { "nombre": "Campechano", "precio": 30 },
+        { "nombre": "Chorizo", "precio": 30 },
+        { "nombre": "Chorizo verde", "precio": 30 },
+        { "nombre": "Chorizo Argentino", "precio": 30 },
+        { "nombre": "Pechuga", "precio": 30 },
+        { "nombre": "Bistec", "precio": 30 },
+        { "nombre": "Chuleta fresca", "precio": 30 }
+      ],
+      "nota": "Con queso $35.-"
+    },
+    {
+      "nombre": "Burritos",
+      "productos": [
+        { "nombre": "Campechano", "precio": 90 },
+        { "nombre": "Chorizo", "precio": 90 },
+        { "nombre": "Chorizo verde", "precio": 90 },
+        { "nombre": "Chorizo Argentino", "precio": 90 },
+        { "nombre": "Bistec", "precio": 90 },
+        { "nombre": "Chuleta fresca", "precio": 90 },
+        { "nombre": "Enchilada", "precio": 90 },
+        { "nombre": "Pechuga", "precio": 90 },
+        { "nombre": "Suadero", "precio": 90 }
+      ]
+    },
+    {
+      "nombre": "Bebidas",
+      "productos": [
+        { "nombre": "Jarrito", "precio": 20 },
+        { "nombre": "Refresco", "precio": 35 },
+        { "nombre": "Coca desechable", "precio": 25 }
+      ]
+    }
+  ]
+}
